@@ -2,6 +2,18 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
+class PublishedManager(models.Manager):
+    """создаем конкретно-прикладной менеджер"""
+    def get_queryset(self):
+        return super().get_queryset()\
+                .filter(status=Post.Status.PUBLISHED)
+
+class OooManager(models.Manager):
+    """создан как эксперимент для проверки себя"""
+    def get_queryset(self):
+        return super().get_queryset()\
+                .filter(title__startswith="Who")
+
 class Post(models.Model):
     """создаем модель для хранения постов"""
 
@@ -24,6 +36,9 @@ class Post(models.Model):
                                related_name='blogik_posts')
 
 
+    objects = models.Manager()
+    published = PublishedManager()
+    ooo = OooManager()
 
     class Meta:
         ordering = ['-publish']
