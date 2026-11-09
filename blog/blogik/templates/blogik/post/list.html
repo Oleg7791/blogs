@@ -1,0 +1,27 @@
+{% extends 'blogik/base.html' %}
+
+{% block title %}Мой блог{% endblock %}
+
+{% block content %}
+    <h1 class="underline">Мой блог</h1>
+    {% for post in posts %}
+        <h2>
+            <a href="{% url 'blogik:post_detail' post.id %}">
+                {{ post.title }}
+            </a>
+        </h2>
+        <p class="date">
+            Опубликовано {{ post.publish }} автор {{ post.author|capfirst }}
+        </p>
+        {{ post.body}}
+    {% endfor %}
+{% endblock %}
+{% block sidebar %}
+    <p>Название всех постов:</p>
+    {% for post in posts %}
+<!--        <li>"{{ post.title }}"</li>-->
+        <a href="{% url 'blogik:post_detail' post.id %}">
+               <li>{{ post.title }}</li>
+            </a>
+    {% endfor %}
+{% endblock %}

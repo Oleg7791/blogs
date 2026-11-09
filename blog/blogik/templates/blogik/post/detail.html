@@ -1,0 +1,15 @@
+{% extends 'blogik/base.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+    <p class="ooo"> {{ post }} </p>
+    <p>Дата публикации {{ post.publish }}</p>
+    <p class="author">Автор: {{ post.author|capfirst }}</p>
+    <div class="body"> {{ post.body }}</div>
+{% endblock %}
+
+{% block sidebar %}
+    <p>Название поста:</p>
+    <p>"{{ post.title }}"</p>
+{% endblock %}

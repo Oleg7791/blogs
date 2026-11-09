@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.underline {
+    margin-bottom: 40px;
+    text-decoration: underline;
+    text-decoration-color: #333;       /* цвет линии */
+    text-decoration-thickness: 2px;    /* толщина */
+    text-underline-offset: 4px;        /* отступ от текста */
+    color:#6A5ACD;
+    text-align: center;
+    font-size: 100px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Flex-контейнер */
+.layout {
+    display: flex;
+    gap: 20px;
+    min-height: 100vh;
+    padding: 20px;
+    max-width: auto;
+    margin: 0 auto;
+}
+
+/* Основной контент */
+#content {
+    text-align: justify;
+    flex: 1;
+    background: #ffa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Сайдбар */
+#sidebar {
+    width: 20%;
+    flex-shrink: 0;
+    background: #66CDAA;
+    padding: 20px;
+    border-radius: 15px;
+    color: #FFA07A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ooo {
+    color:#008080;
+    font-family: georgia, serif;
+    font-size: 100px;
+    font-style: italic;
+    margin-bottom:4px;
+    text-decoration: underline wavy #008080;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+
+}
+
+.author {
+    margin-top: 40px;
+    font-family: arial, serif;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.body {
+    text-indent: 2em;
+    width: 100%;
+    font-family: Arial, serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 40px;
+}
+
+p.date {
+    color:#ccf;
+    font-family: georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+}
+
+/* pagination */
+.pagination {
+    margin:40px 0;
+    font-weight:bold;
+}
+
+/* forms */
+label {
+    float:left;
+    clear:both;
+    color:#333;
+    margin-bottom:4px;
+}
+input, textarea {
+    clear:both;
+    float:left;
+    margin:0 0 10px;
+    background:#ededed;
+    border:0;
+    padding:6px 10px;
+    font-size:12px;
+}
+input[type=submit] {
+    font-weight:bold;
+    background:#00abff;
+    color:#fff;
+    padding:10px 20px;
+    font-size:14px;
+    text-transform:uppercase;
+}
+.errorlist {
+    color:#cc0033;
+    float:left;
+    clear:both;
+    padding-left:10px;
+}
+
+/* comments */
+.comment {
+    padding:10px;
+}
+.comment:nth-child(even) {
+    background:#efefef;
+}
+.comment .info {
+    font-weight:bold;
+    font-size:12px;
+    color:#666;
+}
