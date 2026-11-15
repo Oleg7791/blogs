@@ -8,8 +8,13 @@ def post_list(request):
                   'blogik/post/list.html',
                   {'posts': y})
 
-def post_detail(request, id):
-    x = get_object_or_404(Post.published,id=id)
+def post_detail(request, year, month, day, post_slug):
+    x = get_object_or_404(Post.published,
+                          slug = post_slug,
+                          publish__year=year,
+                          publish__month=month,
+                          publish__day=day,
+                          ) #ORM запросы в SQL поэтом двойное __ (лукап)
 
     return render(request,
                   'blogik/post/detail.html',

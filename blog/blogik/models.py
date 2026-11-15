@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 
 class PublishedManager(models.Manager):
     """создаем конкретно-прикладной менеджер"""
@@ -23,7 +24,8 @@ class Post(models.Model):
         PUBLISHED = 'PB', 'Published'
 
     title = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250,
+                            unique_for_date='publish')
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
@@ -48,3 +50,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blogik:post_detail',
+                       kwargs={'year':self.publish.year,
+                             'month':self.publish.month,
+                             'post_slug':self.slug,
+                             'day':self.publish.day,
+                               })

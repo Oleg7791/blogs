@@ -11,8 +11,10 @@
     text-decoration-thickness: 2px;    /* толщина */
     text-underline-offset: 4px;        /* отступ от текста */
     color:#6A5ACD;
-    text-align: center;
+
     font-size: 100px;
+    font-style: italic;
+    font-family: Times New Roman, sans-serif;
 }
 
 
