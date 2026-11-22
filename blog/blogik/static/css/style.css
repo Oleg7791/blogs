@@ -91,10 +91,49 @@ p.date {
     font-style: italic;
 }
 
-/* pagination */
+/* Контейнер пагинации */
 .pagination {
-    margin:40px 0;
-    font-weight:bold;
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Обёртка ссылок и текста */
+.pagination .step-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #FFFACD;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Ссылки «Предыдущая» и «Следующая» */
+.pagination .page-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.2s ease-in, color 0.2s ease-in;
+}
+
+.pagination .page-link:hover {
+    background: #3498db;
+    color: #ffffff;
+}
+
+/* Текущая страница */
+.pagination .current {
+    color: #7f8c8d;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #f4f6f8;
 }
 
 /* forms */

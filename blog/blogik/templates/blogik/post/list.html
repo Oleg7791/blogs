@@ -15,6 +15,7 @@
         </p>
         {{ post.body}}
     {% endfor %}
+    {% include 'pagination.html' with page=posts %}
 {% endblock %}
 {% block sidebar %}
     <p>Название всех постов:</p>

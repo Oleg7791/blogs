@@ -9,5 +9,8 @@ urlpatterns = [
     path('<int:year>/<int:month>/<int:day>/<slug:post_slug>/',
          views.post_detail,
          name='post_detail'),
+    path('who/',views.who_post,
+         name='who_post'),
+
 ]
 
